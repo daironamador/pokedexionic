@@ -1,9 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detail</ion-title>
+<!-- <ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="pokemon">{{pokemon.name}}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<div class="containerzmain is{{pokemon.types[0].type.name}}" *ngIf="pokemon">
+  <div class="header">
+    <div class="titleandback">
+      <div class="btn-back" [routerLink]="['/home']">
+        <img src="../../../assets/img/flecha.png" alt="">
+      </div>
+      <div class="title" >
+        {{pokemon.name}}
+      </div>
 
-</ion-content>
+    </div>
+    <div class="numberpkmn">
+      <p>#</p>
+    </div>
+  </div>
+  <div class="pokeballbg">
+    <img src="../../../assets/img/pokeballbg.png" width="258px" alt="">
+  </div>
+
+  <div class="card  "  *ngIf="pokemon">
+    <div class="content-detailed" >
+      <div class="imgpkmn">
+        <img src="{{pokemon.sprites.other['official-artwork'].front_default}}" width="200px" alt="">
+      </div>
+      <div class="types"  *ngFor="let tipo of pokemonType">
+        <span class="{{tipo}}" >{{tipo}}</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

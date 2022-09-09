@@ -1,9 +1,57 @@
-<ion-header>
+
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>Pokédex</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-content *ngIf="data">
+  <ion-list *ngFor="let pokemons of data.results" [routerLink]="['/detail/'+pokemons.name]">
+    <ion-item>
+      <ion-label>{{pokemons.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+<div class="header">
+  <div class="icon">
+    <img src="../../../assets/img/pokeball.png" width="24px">
+  </div>
+  <h2 class="title">Pokédex</h2>
+</div>
+
+<div class="search-bar">
+  <input id="search-input" type="text" placeholder="  Buscar">
+</div>
 <ion-content>
+  
+
+  <ion-list>
+    <div class="home-app">
+
+    
+  
+    
+  
+      <div class="listPokemon" *ngIf="data">
+        <ion-list class="info" *ngFor="let pokemon of data; index as i">
+            <div class="pokemon-square is{{pokemon.types[0].type.name}}" [routerLink]="['/detail/'+pokemon.name]">
+              <div class="pokemon-number">#{{i+1}}</div>
+              <div class="pokemon-image">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{i+1}}.png"  alt="">
+              </div>
+              <div class="pokemon-name es{{pokemon.types[0].type.name}}"><h2>{{pokemon.name}}</h2></div>
+            </div>
+        </ion-list>
+      </div>
+    </div>
+
+    <ion-infinite-scroll (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="Carcando más Pokémons...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+  
 
 </ion-content>

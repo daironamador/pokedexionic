@@ -1,0 +1,236 @@
+.containerzmain{
+    height: 100%;
+    background: #3e3e3e;
+}
+
+.isfire {
+    background: #f57d31;
+}
+
+.isgrass{
+    background: #74CB48;
+}
+
+.iswater{
+    background: #6493EB;
+}
+
+.isnormal{
+    background: #AAA67F;
+}
+.isfighting{
+    background: #C12239;
+}
+
+.isflying{
+    background: #A891EC;
+}
+
+.isground{
+    background:#DEC16B;
+}
+
+.ispoison{
+    background: #A43E9E;
+}
+
+.isrock{
+    background: #B69E31;
+}
+
+.isbug{
+    background: #A7B723;
+}
+
+.isghost{
+    background: #70559B;
+}
+.issteel{
+    background: #B7B9D0;
+}
+
+.iselectric{
+    background: #F9CF30;
+}
+
+.ispsychic{
+    background:#FB5584 ;
+}
+
+.isice{
+    background: #9AD6DF;
+}
+
+.isdragon{
+    background: #7037FF;
+}
+
+.isdark{
+    background: #75574C;
+}
+
+.isfairy{
+    background: #E69EAC;
+}
+
+.pokeballbg{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+    margin-top: -110px;
+}
+
+.imgpkmn{
+    margin-top: -170px;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    width: 97%;
+    height: 435px;
+    margin: 5px;
+    bottom: 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.titleandback {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title{
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: capitalize;
+    color: white;
+}
+.numberpkmn{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+}
+
+
+
+
+.fire{
+    /* Type */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 2px 8px;
+
+width: 35px;
+height: 20px;
+
+/* Type - Fire */
+
+background: #F57D31;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.grass{
+    /* Type */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 1px 8px;
+
+width: 46px;
+height: 20px;
+
+/* Type - Grass */
+
+background: #74CB48;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.poison{
+    /* Type */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 2px 8px;
+
+width: 51px;
+height: 20px;
+
+/* Poison */
+
+background: #A43E9E;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+
+.normal{
+    /* Property 1=Normal */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 2px 8px;
+
+width: 55px;
+height: 20px;
+
+/* Type - Normal */
+
+background: #AAA67F;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
