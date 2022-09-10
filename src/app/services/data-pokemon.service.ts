@@ -12,7 +12,7 @@ export class DataPokemonService {
   constructor(
     private _http: HttpClient
   ) { 
-   this.url = 'https://pokeapi.co/api/v2/pokemon';
+   this.url = 'https://pokeapi.co/api/v2/pokemon/';
   }
 
   getData(lmt:any):Observable<any>{
@@ -20,7 +20,11 @@ export class DataPokemonService {
   }
 
   getDetail(id:string): Observable<any>{
-    return this._http.get('https://pokeapi.co/api/v2/pokemon/'+id);
+    return this._http.get(this.url+id);
+  }
+
+  getDescription(id:string): Observable<any>{
+    return this._http.get('https://pokeapi.co/api/v2/pokemon-species/'+id);
   }
 
   // getType(pkmn:any): Observable<any>{

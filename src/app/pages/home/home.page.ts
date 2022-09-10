@@ -12,6 +12,7 @@ export class HomePage implements OnInit {
 public data:any[] = [];
 public carga:any='?offset=0&limit=20';
 public limite:number=20;
+public start: number=0
 
   constructor(
     private servicePokemon: DataPokemonService,
@@ -26,9 +27,7 @@ public limite:number=20;
   //  this.loadTypes(this.idTypes);
   }
 
-  doInfinite(event){
-
-  }
+  
   
   loadData(event): Promise<any>{
     this.servicePokemon.getData(this.carga).subscribe(
@@ -39,7 +38,7 @@ public limite:number=20;
           .subscribe(
             lastResponse=>{
               this.data.push(lastResponse);
-              console.log(this.data);
+              // console.log(this.data);
             }
           )
         });
@@ -53,12 +52,10 @@ public limite:number=20;
     return new Promise((resolve, reject) => {
         
       setTimeout(()=>{
-        console.log('Cargando nuevos pokemones');
-  
-        this.carga='?offset=0&limit='+(this.limite+=20) ;
-        console.log(this.carga);
         
-        event.target.complete();
+
+        this.carga= '?offset='+(this.start+=20)+'&limit='+(this.limite+=20);
+        console.log(this.carga);
       },1000);
     });
   }
