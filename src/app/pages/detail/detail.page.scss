@@ -1,6 +1,8 @@
 .containerzmain{
     height: 100%;
     background: #3e3e3e;
+    display: flex;
+    justify-content: center;
 }
 
 .isfire {
@@ -34,7 +36,7 @@
 
 .isground{
     background:#DEC16B;
-colord:#DEC16B;
+    color:#DEC16B;
 }
 
 .ispoison{
@@ -76,10 +78,11 @@ colord:#DEC16B;
     color: #9AD6DF;
 }
 
-.isdragon{
+ .isdragon{
     background: #7037FF;
     color: #7037FF;
 }
+
 
 .isdark{
     background: #75574C;
@@ -92,37 +95,49 @@ colord:#DEC16B;
 }
 
 .pokeballbg{
-    display: flex;
-    flex-direction: row-reverse;
-    padding-right: 10px;
-    margin-top: -110px;
+    height: 0px;
+    position: absolute;
+    max-width: 245px;
+    border: 0;
+    right: 5px;
+    margin-top: 5px;
+}
+
+.pokeballbg img{
+    width: 700px;
 }
 
 .imgpkmn{
     margin-top: -170px;
 }
+.headtop {
+    width: 100%;
+    display: flex;
+}
 
 .header{
     display: flex;
-    width: 100%;
-    align-content: center;
+    width: 140%;
+    height: 0px;
     flex-direction: row;
-    align-items: center;
     padding: 30px;
-
     justify-content: space-between;
+    align-items: center;
 }
 
 .card {
     display: flex;
     align-items: center;
     width: 98%;
-    height: 455px;
     margin: 5px;
-    bottom: 0px;
     background: #FFFFFF;
     border-radius: 8px;
     flex-direction: column;
+    height: 65%;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0px;
+    justify-content: space-evenly;
 }
 
 .titleandback {
@@ -152,6 +167,7 @@ colord:#DEC16B;
     gap: 15px;
     height: 25px;
     align-items: center;
+    text-transform: capitalize;
 }
 
 
@@ -176,6 +192,16 @@ colord:#DEC16B;
 .about {
     font-family: 'Poppins-bold';
     font-size: 14px;
+}
+
+.about h2{
+    margin-bottom: 5px;
+}
+
+.base-stats h2{
+    font-family: 'Poppins-bold';
+    margin: 0px;
+    
 }
 
 .basic-stats {
@@ -255,7 +281,52 @@ colord:#DEC16B;
     flex-wrap: nowrap;
     font-family: "Poppins";
     color: #3e3e3e;
-    padding: 15px;
+    padding: 0px 15px 0px 15px;
     text-align: center;
+    justify-content: center;
 }
 
+.description p{
+    margin: 10px 0px 10px 0px
+}
+
+.base-stats {
+    font-size: 14px;
+}
+
+.stats-label {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.stats-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.labels-stats h2{
+    font-family: "Poppins-bold";
+    font-size: 14px;
+    margin: 0px;
+    width: 50px;
+    border-right: solid 2px #cecece;
+}
+
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.progress p {
+    margin: 0px 12px 0px 0px;
+    font-family: "Poppins";
+    font-size: 14px;
+}

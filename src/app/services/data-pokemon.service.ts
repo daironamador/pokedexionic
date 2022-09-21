@@ -15,8 +15,8 @@ export class DataPokemonService {
    this.url = 'https://pokeapi.co/api/v2/pokemon/';
   }
 
-  getData(lmt:any):Observable<any>{
-    return this._http.get(this.url+lmt);
+  getData(ruta:any):Observable<any>{
+    return this._http.get(this.url+ruta);
   }
 
   getDetail(id:string): Observable<any>{
@@ -26,9 +26,5 @@ export class DataPokemonService {
   getDescription(id:string): Observable<any>{
     return this._http.get('https://pokeapi.co/api/v2/pokemon-species/'+id);
   }
-
-  // getType(pkmn:any): Observable<any>{
-  //   return this._http.get(this.url+pkmn);
-  // }
   
 }

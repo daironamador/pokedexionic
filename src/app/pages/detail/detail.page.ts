@@ -36,13 +36,13 @@ export class DetailPage implements OnInit {
         for(let i = 0; i < this.pokemon.types.length; i++){
         this.pokemonType.push(this.pokemon.types[i].type.name);
         }
-
          console.log(this.pokemonType);
       }, error=>{
         console.log(error);
       }
     )
   }
+
 
   loadDescription(){
     this.detailPokemonService.getDescription(this.id).subscribe(

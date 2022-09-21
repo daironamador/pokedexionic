@@ -2,22 +2,24 @@
 
 <div class="containerzmain is{{pokemon.types[0].type.name}}" *ngIf="pokemon">
   <!-- <button class="nextBtn" [routerLink]="['/detail/'+(pokemon.id+1)]">next</button> -->
-  <div class="header">
-    <div class="titleandback">
-      <div class="btn-back" [routerLink]="['/home']">
-        <img src="../../../assets/img/flecha.png" alt="">
+  <div class="headtop">
+    <div class="header">
+      <div class="titleandback">
+        <div class="btn-back" [routerLink]="['/home']">
+          <img src="../../../assets/img/flecha.png" alt="">
+        </div>
+        <div class="title" >
+          {{pokemon.name}}
+        </div>
+  
       </div>
-      <div class="title" >
-        {{pokemon.name}}
+      <div class="numberpkmn">
+        <p># {{pokemon.id}}</p>
       </div>
-
     </div>
-    <div class="numberpkmn">
-      <p>#</p>
+    <div class="pokeballbg">
+      <img src="../../../assets/img/pokeballbg.png" width="258px" alt="">
     </div>
-  </div>
-  <div class="pokeballbg">
-    <img src="../../../assets/img/pokeballbg.png" width="258px" alt="">
   </div>
 
   <div class="card  "  *ngIf="pokemon">
@@ -34,7 +36,7 @@
     </div>
 
     <div class="about ">
-      <h2>About</h2>
+      <h2>Acerca</h2>
     </div>
 
     <div class="basic-stats">
@@ -43,14 +45,14 @@
           <img src="../../../assets/img/peso.png"  >
           <div>{{pokemon.weight | pund:'kg':1 }}</div>
         </div>
-        <div class="weight-label">Weight</div>
+        <div class="weight-label">Peso</div>
       </div>
       <div class="height">
         <div class="weight-info">
           <img src="../../../assets/img/rule.png"  >
           <div>{{pokemon.height | feet:'m' }}</div>
         </div>
-        <div class="height-label">Height</div>
+        <div class="height-label">Altura</div>
       </div>
       <div class="moves" >
         <div class="moves-info">
@@ -58,7 +60,7 @@
             <div>{{abs.ability.name}}</div>
         </div>
         </div>
-        <div class="moves-label">Moves</div>
+        <div class="moves-label">Movimientos</div>
       </div>
     </div>
 
@@ -66,8 +68,35 @@
       <p>{{pokemonDescription}}</p>
     </div>
 
-    <div class="about ">
-      <h2>Base Stats</h2>
+    <div class="base-stats ">
+      <h2>Información Base</h2>
+    </div>
+
+
+
+    <div class="stats-label">
+      <div class="labels-stats">
+        <h2>HP</h2>
+        <h2>ATK</h2>
+        <h2>DEF</h2>
+        <h2>SATK</h2>
+        <h2>SDEF</h2>
+        <h2>SPD</h2>
+      </div>
+
+      <div class="stats-info">
+        <div *ngFor="let stats of pokemon.stats; index as i">
+          <div class="progress">
+            <p>{{stats.base_stat}}</p><div class="bar" style="width: 270px; height: 10px; border-radius: 50px; background: rgba(128, 128, 128, 0.271);">
+            <div class="barra is{{pokemonType[0]}}" style="height: 10px; border-radius: 50px;" [ngStyle]="{'width': stats.base_stat+'px'}">
+
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
     </div>
   </div>
 

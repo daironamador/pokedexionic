@@ -10,52 +10,59 @@ import { ActivatedRoute, Params} from '@angular/router'
 })
 export class HomePage implements OnInit {
 public data:any[] = [];
-public carga:any='?offset=0&limit=20';
+public ruta:any;
 public limite:number=20;
 public start: number=0
 
   constructor(
     private servicePokemon: DataPokemonService,
   ) {
-
+      this.ruta='?limit=20&offset='+this.start;
 
    }
 
 
   ngOnInit() {
-   this.loadData('a');
+   this.loadData('');
   //  this.loadTypes(this.idTypes);
   }
 
   
   
   loadData(event): Promise<any>{
-    this.servicePokemon.getData(this.carga).subscribe(
+    this.servicePokemon.getData(this.ruta).subscribe(
       response =>{
         // this.data = response;
         response.results.forEach(result => {
           this.servicePokemon.getDetail(result.name)
           .subscribe(
             lastResponse=>{
+              // console.log(lastResponse.id);
               this.data.push(lastResponse);
-              // console.log(this.data);
+              this.data = this.data.sort((a,b)=> a.id - b.id);
             }
           )
         });
-
-        
       }
-      
     );
-
-    
     return new Promise((resolve, reject) => {
         
-      setTimeout(()=>{
+
+
+      
+
+      
+
+      setTimeout((response, reject)=>{
+        
         
 
-        this.carga= '?offset='+(this.start+=20)+'&limit='+(this.limite+=20);
-        console.log(this.carga);
+        this.start += 20;
+        this.ruta='?limit=20&offset='+this.start;
+
+        console.log(this.ruta);
+        event.target.complete();
+
       },1000);
     });
   }

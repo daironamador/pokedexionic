@@ -12,6 +12,7 @@
     </ion-item>
   </ion-list>
 </ion-content> -->
+<ion-content>
 <div class="header">
   <div class="icon">
     <img src="../../../assets/img/pokeball.png" width="24px">
@@ -20,9 +21,9 @@
 </div>
 
 <div class="search-bar">
-  <input id="search-input" type="text" placeholder="  Buscar">
+  <input id="search-input" type="text" placeholder="&#xf002;  Buscar">
 </div>
-<ion-content>
+
   
 
   <div class="home-app">
@@ -30,7 +31,7 @@
     <div class="listPokemon" *ngIf="data">
       <ion-list class="info" *ngFor="let pokemon of data; index as i">
           <div class="pokemon-square is{{pokemon.types[0].type.name}}" [routerLink]="['/detail/'+pokemon.name]">
-            <div class="pokemon-number">#{{i+1}}</div>
+            <div class="pokemon-number n-{{pokemon.types[0].type.name}}">#{{i+1}}</div>
             <div class="pokemon-image">
               <img src="{{pokemon.sprites.other['official-artwork'].front_default}}"  alt="">
             </div>

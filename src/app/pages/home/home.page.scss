@@ -11,6 +11,7 @@
     align-content: center;
 }
 
+
 .title {
     font-family: 'Poppins-bold';
     font-size: 24px;
@@ -34,17 +35,19 @@
     border: 1px solid #E0E0E0;
     border-radius: 8px;
     text-align: center;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 300;
+    font-family: "Font Awesome 5 Free",'Poppins';
+    font-weight: 700;
 }
 
 .listPokemon {
     width: 100%;
-    padding: 20px;
+    padding: 9px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    justify-content: space-evenly;
+    align-content: space-around;
+    gap: 8px 3px;
 }
 
 .pokemon-square{
@@ -63,6 +66,9 @@
 .pokemon-number {
     display: flex;
     flex-direction: row-reverse;
+    font-family: 'Poppins';
+    font-size: 14px;
+    margin-right: 2px;
 }
 
 .pokemon-image {
@@ -246,4 +252,77 @@
 
 .isfairy{
     border: 3px solid #E69EAC;
+}
+
+
+
+.n-fire{
+ color: #f57d31;
+
+}
+
+.n-grass{
+ color: #74CB48;
+}
+
+.n-water{
+ color: #6493EB;
+}
+
+.n-normal{
+ color: #AAA67F;
+}
+.n-fighting{
+ color: #C12239;
+}
+
+.n-flying{
+ color: #A891EC;
+}
+
+.n-ground{
+ color:#DEC16B;
+}
+
+.n-poison{
+ color: #A43E9E;
+}
+
+.n-rock{
+ color: #B69E31;
+}
+
+.n-bug{
+ color: #A7B723;
+}
+
+.n-ghost{
+ color: #70559B;
+}
+.n-steel{
+ color: #B7B9D0;
+}
+
+.n-electric{
+ color: #F9CF30;
+}
+
+.n-psychic{
+ color:#FB5584 ;
+}
+
+.n-ice{
+ color: #9AD6DF;
+}
+
+.n-dragon{
+ color: #7037FF;
+}
+
+.n-dark{
+ color: #75574C;
+}
+
+.n-fairy{
+ color: #E69EAC;
 }
